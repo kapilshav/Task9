@@ -1,0 +1,92 @@
+<style>
+    body{
+        background-image: url("k8.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    .title{
+        text-align: center;
+        color: white;
+        font-size: 13vh;
+        font-family: sans-serif;
+    }
+    #btn{
+        background-color: plum;
+        text-align: center;
+        color: royalblue;
+        margin-left: 34px;
+        font-size: 23px;
+        font-weight: bold;
+        border: none;
+    
+        
+    }
+    .wrapper{
+        text-align: center;
+    }
+    input[type=text]{
+        text-align: center;
+        justify-content: center;
+        font-weight: bold;
+        border-radius: 10px;
+        display: block;
+        margin-top: 15px;
+        padding: 12px 40px;
+        width: 40%;
+        position: relative;
+
+    }
+    #d1{
+        border: 3px solid white;
+        width: 55%;
+        padding: 12px 40px;
+        background-color: white;
+        height: 48%;
+        overflow: scroll;
+        border-radius: 10px;
+        font-size: 21px;
+        font-weight: bold;
+        text-align: center;
+        margin: 0 auto;
+
+
+    }
+    
+    
+</style>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kubernetes</title>
+        <script>
+           function fun(){
+               var i =document.getElementById("in1").value
+               var xhr = new XMLHttpRequest()
+               xhr.open("GET" , "" + i ,true);
+
+               xhr.send()
+               xhr.onload = function(){
+                   var output = xhr.responseText;
+                   document.getElementById("d1").innerHTML = output;
+
+               }
+           }
+        </script>
+    </head>
+    <body>
+        <div>
+            <h1 class="title">Kubernetes Web Application</h1>
+            <p class="heading"></p>
+            <center>
+            <input type="text" placeholder="Enter your Requirments" id="in1" />
+            </center>
+            <br/>
+            <div class="wrapper">
+                <button id="btn" onclick="fun()"> RUN</button>
+            </div>
+            <br>
+            <div id="d1"></div>
+        </div>
+    </body>
+</html>
